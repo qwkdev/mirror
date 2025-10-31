@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>qMirror</title>
+
+	<style>
+		body {
+			margin: 0;
+			background: #000;
+		}
+		p {
+			margin: 2vh 3.5vh;
+			width: 80vw;
+			font-size: 5vh;
+			font-family: monospace;
+			color: #fff;
+		}
+		p::selection {
+			background: #fff7;
+		}
+	</style>
+</head>
+<body>
+	<p id="main">Loading...</p>
+	<script>
+		const path = window.location.pathname.slice(1);
+		document.getElementById('main').innerText(`Downloading ${path}...`);
+		window.location.href = `https://github.com/qwkdev/mirror/releases/latest/download/${path}.exe`;
+	</script>
+</body>
+</html>
